@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'https://taskmanagerpro.fwh.is';
+export const API_BASE_URL = 'https://taskmanager.fwh.is';
 
 export const API_ROUTES = {
   login: `${API_BASE_URL}/api/auth/login`,
@@ -12,6 +12,6 @@ export const API_ROUTES = {
 };
 
 export const BRAND = {
-  name: 'TaskManager Pro',
+  name: 'TaskManager',
   slogan: 'Momentum for modern teams',
 };
