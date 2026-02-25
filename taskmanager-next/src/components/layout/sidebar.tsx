@@ -3,19 +3,20 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Route } from 'next';
-import { BRAND } from '@/lib/config';
 import clsx from 'clsx';
+
+import { BRAND } from '@/lib/config';
 
 type NavItem = {
   href: Route;
   label: string;
 };
 
-const nav: NavItem[] = [
-  { href: '/dashboard', label: 'Dashboard' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/tasks', label: 'Tasks' },
-  { href: '/admin', label: 'Admin' },
+const navItems: NavItem[] = [
+  { href: '/dashboard' as Route, label: 'Dashboard' },
+  { href: '/projects' as Route, label: 'Projects' },
+  { href: '/tasks' as Route, label: 'Tasks' },
+  { href: '/admin' as Route, label: 'Admin' },
 ];
 
 export function Sidebar() {
@@ -34,7 +35,7 @@ export function Sidebar() {
       </div>
 
       <nav className="flex flex-col gap-2">
-        {nav.map((item) => (
+        {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
@@ -50,8 +51,5 @@ export function Sidebar() {
         ))}
       </nav>
     </aside>
-  );
-}
-
   );
 }
