@@ -2,10 +2,16 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import type { Route } from 'next';
 import { BRAND } from '@/lib/config';
 import clsx from 'clsx';
 
-const nav = [
+type NavItem = {
+  href: Route;
+  label: string;
+};
+
+const nav: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/projects', label: 'Projects' },
   { href: '/tasks', label: 'Tasks' },
@@ -44,5 +50,8 @@ export function Sidebar() {
         ))}
       </nav>
     </aside>
+  );
+}
+
   );
 }
